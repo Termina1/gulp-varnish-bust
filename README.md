@@ -13,6 +13,28 @@ $ npm install --save gulp-varnish-bust
 
 ## Usage
 
+At first you need to properly configure Varnish to be able to ban cache. Below is only parts of the config you should add for banning.
+
+```vcl
+acl banners {
+    "127.0.0.1";
+    "localhost";
+}
+sub vcl_recv {
+	if (req.method == "BAN") {
+		if(!client.ip ~ banners) {
+			return (synth(405, "This IP is not allowed to send BAN requests."));
+		}
+		ban("obj.http.x-url ~ " + req.http.x-ban-url);
+       		return (synth(201, "Banned successfully! " + req.http.x-ban-url));
+       	}
+}
+
+sub vcl_backend_response {
+        set beresp.http.x-url = bereq.url;
+}
+```
+
 ```js
 var gulp = require('gulp');
 var bust = require('gulp-varnish-bust');
