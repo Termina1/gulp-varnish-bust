@@ -13,7 +13,8 @@ $ npm install --save gulp-varnish-bust
 
 ## Usage
 
-At first you need to properly configure Varnish to be able to ban cache. Below is only parts of the config you should add for banning.
+At first you need to properly configure Varnish to be able to ban cache. Below is only parts of the config you should add for banning. Config is specific for 4.\* versions and does not work for 3.\* versions.
+More details [here](https://www.varnish-software.com/static/book/Cache_invalidation.html).
 
 ```vcl
 acl banners {
