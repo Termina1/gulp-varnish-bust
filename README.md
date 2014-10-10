@@ -35,6 +35,8 @@ sub vcl_backend_response {
 }
 ```
 
+Now, just add gulp-varnish-bust to the end of your chain.
+
 ```js
 var gulp = require('gulp');
 var bust = require('gulp-varnish-bust');
