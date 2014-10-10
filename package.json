@@ -1,0 +1,32 @@
+{
+  "name": "gulp-varnish-bust",
+  "version": "0.0.1",
+  "description": "Gulp task for busting Varnish cache after deploy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Termina1/gulp-varnish-bust.git"
+  },
+  "keywords": [
+    "gulp",
+    "varnish",
+    "cache",
+    "busting",
+    "deploy"
+  ],
+  "author": "Termina1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Termina1/gulp-varnish-bust/issues"
+  },
+  "homepage": "https://github.com/Termina1/gulp-varnish-bust",
+  "dependencies": {
+    "request": "^2.45.0",
+    "through2": "^0.6.3",
+    "lodash": "^2.4.1",
+    "gulp-util": "^3.0.1"
+  }
+}
