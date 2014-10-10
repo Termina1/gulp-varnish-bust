@@ -1,6 +1,6 @@
 {
   "name": "gulp-varnish-bust",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Gulp task for busting Varnish cache after deploy",
   "main": "index.js",
   "scripts": {
