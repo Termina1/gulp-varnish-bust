@@ -18,7 +18,7 @@ module.exports = function(opts) {
         'X-Ban-Url': '.*'
       }
     }, function (error, response, body) {
-      if (response.statusCode !== 201) {
+      if (!response || response.statusCode !== 201) {
         gutil.log(gutil.colors.red(error));
       } else {
         gutil.log(gutil.colors.green('Banned successful!'));
